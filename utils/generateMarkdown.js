@@ -19,4 +19,5 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+//right now, there is no way for node to access these functions; to accomplish this, we can create the module.exports object: **When the key/value are equal to each other, we only have to provide one value for the two
+module.exports = generateMarkdown; //where is this passed?
