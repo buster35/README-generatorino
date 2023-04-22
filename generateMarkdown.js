@@ -35,10 +35,16 @@ function includeQuestions (questions) {
   let contactInfo = `## Questions {#questions} "\n" Please direct any further questions to: ${questions.userGithub} or ${questions.email} "\n"`
 }
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
-    //switch statement?
+    let license = "No license selected";
+    switch (license) {
+      case "MIT": `![GitHub](https://img.shields.io/github/license/${license.userGithub}/README-generatorino)`;
+        break;
+      case "GNU GPLv3": `![GitHub](https://img.shields.io/github/license/${license.userGithub}/README-generatorino)`;
+        break;
+      default: "";
+        break;
+    }
 }
 
 // TODO: Create a function that returns the license link
@@ -47,7 +53,7 @@ function renderLicenseLink(license) {}
 
 // If there is no license, return an empty string
 function includeLicense(license) {
-  let licenseInfo = `## License {#license} "\n" Please refer to the ${license.license} in the root directory.`
+  let licenseInfo = `## License {#license} "\n" The license used for this project is ${license.license}. "\n" `
 }
 
 // TODO: Create a function to generate markdown for README
@@ -60,9 +66,10 @@ function generateMarkdown(data) {
   includeTests (data)
   includeQuestions (data)
   includeLicense (data)
+  renderLicenseBadge (data)
 }
 
 //the module.exports object allows these functions to be used in other files...
 module.exports = {
-  generateMarkdown, createTitle, createDescription, tableOfContents, createInstructions, includeCollaborators, includeTests, includeQuestions, includeLicense
-}
+  generateMarkdown
+};

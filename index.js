@@ -1,9 +1,6 @@
 
 // 6. TODO:build functions
 // 7. TODO:connect markdown with index.js
-// 8.
-// 9.
-// 10.
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -46,7 +43,7 @@ const title = [
   //   type: "confirm",
   //   message: "Do you want to add a broad-spectrum screenshot for the project?",
   //   name: "screenshot1",
-  //   when: (answer) =>  
+  //   when: (answer) => answer.prompt() 
     
   // },
   // {
@@ -89,7 +86,7 @@ const title = [
     type: "list",
     message: "What license are you using for your project?",
     name: "license",
-    choices: ["MIT", "jdfkslalkdasf"],
+    choices: ["MIT", "GNU GPLv3"],
   },
   {
     type: "input",
@@ -103,24 +100,24 @@ const title = [
   }
 ];
 
-inquirer.prompt(title).then((response) => {
-  generateMarkdown(response)
-  });
+
 // TODO: Create a function to write README file; this is to make the actual README.md file(will create a new file)
 // function writeToFile(fileName, data) {}
 
 //Create a function to initialize app
-// function init() {
-//   }
+function init() {
+  inquirer.prompt(title).then((response) => {
+    generateMarkdown(response) //goes to generateMarkdown function in generateMarkdown.js//
+    });
+  }
 
 // Function call to initialize app
-// init();
+init();
 
 
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
 // // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// `## ${testInstructions} "\n"``## ${license} "\n"`// ![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
-// //  (https://choosealicense.com/)
+//![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
