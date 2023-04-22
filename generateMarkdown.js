@@ -6,6 +6,7 @@ const fs = require("fs")
 //   problemsSolved: 'jfdklas;',
 //   whatWasLearned: 'jdflas;',
 //   instructions: 'fjdlas;',
+
 //   screenshot1: false,
 //   screenshot2: false,
 //   collaborators: 'jdklfas;',
@@ -17,19 +18,23 @@ const fs = require("fs")
 //   license: 'MIT'
 // }
 function createTitle (title) {
-  let projectTitle = `# ${title.projectTitle}`
+  let projectTitle = `# ${title.projectTitle} "\n"`
   console.log(projectTitle)
 }
 
-function createDescription (description) {//dont need "Description" title here, just individual paragraphs for the user sub-inpputs//
-  let readmeDescription = `## Description "\n" ${description.motivation} "\n" ${description.whyBuild} "\n" ${description.problemsSolved} "\n" ${description.whatWasLearned}`
+function createDescription (description) {
+  let readmeDescription = `## Description "\n" ${description.motivation} "\n" ${description.whyBuild} "\n" ${description.problemsSolved} "\n" ${description.whatWasLearned} "\n"`
 }
 
-function createInstructions () {
-
+function tableOfContents () {
+  let contents = '## Table of Contents: "\n" ### [Instructions](#instructions) "\n" ### [Screenshots](#screenshots) "\n" ### [Collaborators](#collaborators) "\n" ### [Tests](#tests) "\n" ### [License](#license) "\n"'
 }
 
-function renderScreenshots () {
+function createInstructions (instructions) {
+  let readmeInstructions = `## Instructions {#instructions} "\n" ${instructions.instructions} "\n"`
+}
+
+function renderScreenshots () { //if/else statement to render screenshots if answer is "true"//
 
 }
 
@@ -37,19 +42,13 @@ function includeCollaborators () {
 
 }
 
-function includeThirdPartyAssets () {
-
-}
-
 function includeTests () {
 
 }
 
-
-
-
-
-
+function includeQuestions (questions) {
+  let contactInfo = `## Questions {#questions} "\n" Please direct any further questions to: ${questions.userGithub} or ${questions.email}`
+}
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -69,9 +68,13 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   createTitle (data)
   createDescription (data)
+  createInstructions (data)
+  renderScreenshots (data)
+
+  includeQuestions (data)
 }
 
-//right now, there is no way for node to access these functions; to accomplish this, we can create the module.exports object: **When the key/value are equal to each other, we only have to provide one value for the two
+//the module.exports object allows these functions to be used in other files...
 module.exports = {
-  generateMarkdown, createTitle, createDescription, //this allows generateMarkdown to be used in other files...
+  generateMarkdown, createTitle, createDescription, tableOfContents, createInstructions, 
 }

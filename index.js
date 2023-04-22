@@ -42,16 +42,19 @@ const title = [
     message: "What instructions are required for the user to use your project?",
     name: "instructions",
   },
-  {
-    type: "confirm",
-    message: "Do you want to add a screenshot?",
-    name: "screenshot1",
-  },
-  {
-    type: "confirm",
-    message: "Do you have any examples for use of the program?",
-    name: "screenshot2",
-  },
+  // {
+  //   type: "confirm",
+  //   message: "Do you want to add a broad-spectrum screenshot for the project?",
+  //   name: "screenshot1",
+  //   when: (answer) =>  
+    
+  // },
+  // {
+  //   type: "confirm",
+  //   message: "Do you have any specific screenshot examples for use of the program?",
+  //   name: "screenshot2",
+  //   when: (answer) =>
+  // },
   {
     type: "input",
     message: "What collaborators were involved on this project?",
@@ -88,6 +91,16 @@ const title = [
     name: "license",
     choices: ["MIT", "jdfkslalkdasf"],
   },
+  {
+    type: "input",
+    message: "Please input your GitHub profile link",
+    name: "userGithub"
+  },
+  {
+    type: "input",
+    message: "Please input an email address (if applicable) you'd like to include in your readme",
+    name: "email"
+  }
 ];
 
 inquirer.prompt(title).then((response) => {
@@ -106,7 +119,6 @@ inquirer.prompt(title).then((response) => {
 
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
 // // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// `## ${tableOfContents} "\n"``## ${installationInstructions} "\n"``## ${usageInformation} "\n"``## ${contributionGuidelines} "\n"`//    https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
 // `## ${testInstructions} "\n"``## ${license} "\n"`// ![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 // //  (https://choosealicense.com/)
 
@@ -117,6 +129,3 @@ inquirer.prompt(title).then((response) => {
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 //*Add <link href="" w/on-page link /link> */
-
-// Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions//
-// module.exports = {init};
