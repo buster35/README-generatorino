@@ -14,8 +14,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 //i'll include the functions contained in generateMarkdown.js here, which will cause them to fire once the app is initialized//
-export default userAnswers;
-// const {} = require("./utils/generateMarkdown");
+
+const {generateMarkdown} = require("./generateMarkdown");
 
 const title = [
   {
@@ -122,11 +122,9 @@ function init() {
     // }
   }
 // Function call to initialize app
-init();
+// init();
 inquirer.prompt(title).then((response) => {
-  console.log(response)
-  const userAnswers = response;
-  
+  generateMarkdown(response)
   });
 
 // `# ${projectTitle}`// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
@@ -144,4 +142,4 @@ inquirer.prompt(title).then((response) => {
 //*Add <link href="" w/on-page link /link> */
 
 // entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions//
-module.exports = {init};
+// module.exports = {init};
