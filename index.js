@@ -15,7 +15,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 //i'll include the functions contained in generateMarkdown.js here, which will cause them to fire once the app is initialized//
 
-const {generateMarkdown} = require("./generateMarkdown");
+const {} = require("./generateMarkdown");
 
 const title = [
   {

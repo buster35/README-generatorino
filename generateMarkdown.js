@@ -1,6 +1,4 @@
 const fs = require("fs")
-const userAnswers = require("./index.js")
-console.log(userAnswers)
 
 
 
