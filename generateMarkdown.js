@@ -1,22 +1,7 @@
 const fs = require("fs")
-// {
-//   projectTitle: 'jkldas;',
-//   motivation: 'jdflksa;',
-//   whyBuild: 'jfdklsa;',
-//   problemsSolved: 'jfdklas;',
-//   whatWasLearned: 'jdflas;',
-//   instructions: 'fjdlas;',
 
-//   screenshot1: false,
-//   screenshot2: false,
-//   collaborators: 'jdklfas;',
-//   collaboratorsGithub: 'jdfklsa;',
-//   thirdPartyAssets: 'jdkla;s',
-//   tutorials: 'jdfklas;',
-//   tests: 'jfdklsa;',
-//   testRun: 'jfdksla',
-//   license: 'MIT'
-// }
+
+
 function createTitle (title) {
   let projectTitle = `# ${title.projectTitle} "\n"`
   console.log(projectTitle)
@@ -27,7 +12,7 @@ function createDescription (description) {
 }
 
 function tableOfContents () {
-  let contents = '## Table of Contents: "\n" ### [Instructions](#instructions) "\n" ### [Screenshots](#screenshots) "\n" ### [Collaborators](#collaborators) "\n" ### [Tests](#tests) "\n" ### [License](#license) "\n"'
+  let contents = '## Table of Contents: "\n" ### [Instructions](#instructions) "\n" ### [Screenshots](#screenshots) "\n" ### [Contributions](#contributions) "\n" ### [Tests](#tests) "\n" ### [License](#license) "\n"'
 }
 
 function createInstructions (instructions) {
@@ -38,31 +23,32 @@ function renderScreenshots () { //if/else statement to render screenshots if ans
 
 }
 
-function includeCollaborators () {
-
+function includeCollaborators (collaborators) {
+  let collaborators = `## Contributions {#contributions} "\n" ${collaborators.collaborators} "\n" ${collaborators.collaboratorsGithub} "\n" ${collaborators.thirdPartyAssets} "\n" ${collaborators.tutorials} "\n"`
 }
 
-function includeTests () {
-
+function includeTests (tests) {
+  let tests = `## Tests {#tests} "\n" ${tests.tests} "\n" ${tests.testRun} "\n"`
 }
 
 function includeQuestions (questions) {
-  let contactInfo = `## Questions {#questions} "\n" Please direct any further questions to: ${questions.userGithub} or ${questions.email}`
+  let contactInfo = `## Questions {#questions} "\n" Please direct any further questions to: ${questions.userGithub} or ${questions.email} "\n"`
 }
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  
+    //switch statement?
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function includeLicense(license) {
+  let licenseInfo = `## License {#license} "\n" Please refer to the ${license.license} in the root directory.`
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -70,11 +56,13 @@ function generateMarkdown(data) {
   createDescription (data)
   createInstructions (data)
   renderScreenshots (data)
-
+  includeCollaborators (data)
+  includeTests (data)
   includeQuestions (data)
+  includeLicense (data)
 }
 
 //the module.exports object allows these functions to be used in other files...
 module.exports = {
-  generateMarkdown, createTitle, createDescription, tableOfContents, createInstructions, 
+  generateMarkdown, createTitle, createDescription, tableOfContents, createInstructions, includeCollaborators, includeTests, includeQuestions, includeLicense
 }

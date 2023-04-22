@@ -122,10 +122,6 @@ inquirer.prompt(title).then((response) => {
 // `## ${testInstructions} "\n"``## ${license} "\n"`// ![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 // //  (https://choosealicense.com/)
 
-// // WHEN I enter my GitHub username
-// // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// `## ${questions} "\n" ${github} "\n" ${email} "\n"`;
-
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 //*Add <link href="" w/on-page link /link> */
