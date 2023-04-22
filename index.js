@@ -1,21 +1,15 @@
-/*Steps:
-1. build directory
-2. npm init and install dependencies
-3. requires in index.js
-4. skeleton for markdown
-5. prompt questions *test
-6. TODO:build functions
-7. TODO:connect markdown with index.js
-8.
-9.
-10.
-*/
+
+// 6. TODO:build functions
+// 7. TODO:connect markdown with index.js
+// 8.
+// 9.
+// 10.
 
 const inquirer = require("inquirer");
 const fs = require("fs");
 //i'll include the functions contained in generateMarkdown.js here, which will cause them to fire once the app is initialized//
-
-const {} = require("./generateMarkdown");
+//this links the generateMarkdown function to index.js; now we can pass in the response parameter, which will log in the generateMarkdown.js file//
+const generateMarkdown = require("./generateMarkdown");
 
 const title = [
   {
@@ -96,40 +90,23 @@ const title = [
   },
 ];
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-//Create a function to initialize app
-function init() {
-  
-    
-    // {
-    //   projectTitle: 'jklfda;',
-    //   motivation: 'jlkda;',
-    //   whyBuild: 'jkdlf;as',
-    //   problemsSolved: 'jkldf;a',
-    //   whatWasLearned: 'jflkd;as',
-    //   instructions: 'jdkla;s',
-    //   screenshot1: false,
-    //   screenshot2: false,
-    //   collaborators: 'jfdlas;',
-    //   collaboratorsGithub: 'jdlkfas;',
-    //   thirdPartyAssets: 'jklda;s',
-    //   tutorials: 'jklfdas;',
-    //   tests: 'dfjklsa;',
-    //   testRun: 'jkdflas;',
-    //   license: 'MIT'
-    // }
-  }
-// Function call to initialize app
-// init();
 inquirer.prompt(title).then((response) => {
   generateMarkdown(response)
   });
+// TODO: Create a function to write README file; this is to make the actual README.md file(will create a new file)
+// function writeToFile(fileName, data) {}
 
-// `# ${projectTitle}`// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
+//Create a function to initialize app
+// function init() {
+//   }
+
+// Function call to initialize app
+// init();
+
+
+// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
 // // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// `## ${repoDescription} "\n"``## ${tableOfContents} "\n"``## ${installationInstructions} "\n"``## ${usageInformation} "\n"``## ${contributionGuidelines} "\n"`//    https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
+// `## ${tableOfContents} "\n"``## ${installationInstructions} "\n"``## ${usageInformation} "\n"``## ${contributionGuidelines} "\n"`//    https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
 // `## ${testInstructions} "\n"``## ${license} "\n"`// ![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 // //  (https://choosealicense.com/)
 
@@ -141,5 +118,5 @@ inquirer.prompt(title).then((response) => {
 // THEN I am taken to the corresponding section of the README
 //*Add <link href="" w/on-page link /link> */
 
-// entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions//
+// Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions//
 // module.exports = {init};
