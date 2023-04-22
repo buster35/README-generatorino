@@ -1,39 +1,8 @@
 const fs = require("fs")
 
-
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-
-  let projectTitle = `# ${data.projectTitle} "\n"`
-  console.log(projectTitle)
-
-
-  let readmeDescription = `## Description "\n" ${data.motivation} "\n" ${data.whyBuild} "\n" ${data.problemsSolved} "\n" ${data.whatWasLearned} "\n"`
-
-
-
-  let contents = '## Table of Contents: "\n" ### [Instructions](#instructions) "\n" ### [Screenshots](#screenshots) "\n" ### [Contributions](#contributions) "\n" ### [Tests](#tests) "\n" ### [License](#license) "\n"'
-
-
-
-  let readmeInstructions = `## Instructions {#instructions} "\n" ${data.instructions} "\n"`
-
-
-    function renderScreenshots () { //if/else statement to render screenshots if answer is "true"//
-    }
-
-
-  let collaborators = `## Contributions {#contributions} "\n" ${data.collaborators} "\n" ${data.collaboratorsGithub} "\n" ${data.thirdPartyAssets} "\n" ${data.tutorials} "\n"`
-
-
-
-  let tests = `## Tests {#tests} "\n" ${data.tests} "\n" ${data.testRun} "\n"`
-
-
-
-  let contactInfo = `## Questions {#questions} "\n" Please direct any further questions to: ${data.userGithub} or ${data.email} "\n"`
-}
+  `# ${data.projectTitle}"\n"## Description"\n" ${data.motivation}"\n"${data.whyBuild}"\n"${data.problemsSolved}"\n"${data.whatWasLearned}"\n"## Table of Contents:"\n"### [Instructions](#instructions)"\n"### [Screenshots](#screenshots)"\n"### [Contributions](#contributions)"\n"### [Tests](#tests)"\n"### [License](#license)"\n"## Instructions {#instructions}"\n"${data.instructions}"\n"## Contributions {#contributions}"\n"${data.collaborators}"\n"${data.collaboratorsGithub}"\n"${data.thirdPartyAssets}"\n"${data.tutorials}"\n"## Tests {#tests}"\n"${data.tests}"\n"${data.testRun}"\n"## Questions {#questions}"\n"Please direct any further questions to: ${data.userGithub} or ${data.email}"\n"`}
 
 function renderLicenseBadge(license) {
     let license = "No license selected";
