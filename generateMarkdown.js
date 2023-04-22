@@ -1,5 +1,5 @@
 const fs = require("fs")
-const userAnswers = require("index.js")
+const userAnswers = require("./index.js")
 import {userAnswers} from "index.js"
 console.log(userAnswers)
 
