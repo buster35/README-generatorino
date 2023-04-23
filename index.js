@@ -1,12 +1,10 @@
 
-// 6. TODO:build functions
-// 7. TODO:connect markdown with index.js
-
 const inquirer = require("inquirer");
 const fs = require("fs");
+module.exports = writeToFile;
 //i'll include the functions contained in generateMarkdown.js here, which will cause them to fire once the app is initialized//
 //this links the generateMarkdown function to index.js; now we can pass in the response parameter, which will log in the generateMarkdown.js file//
-const generateMarkdown = require("./gen");
+const generateMarkdown = require("./gen.js");
 
 const title = [
   {
@@ -100,23 +98,21 @@ const title = [
   }
 ];
 
-
-// TODO: Create a function to write README file; this is to make the actual README.md file(will create a new file)
-// function writeToFile(fileName, data) {}
-
-//Create a function to initialize app
+// TODO: Create a function to write README file; this is to make the actual README.md file(will create a new file) 
 function init() {
-  inquirer.prompt(title).then((response) => {
+  inquirer.prompt(title).then((response) => { //working
     generateMarkdown(response) //goes to generateMarkdown function in generateMarkdown.js//
     });
   }
 
+function writeToFile(fileName, file) {
+  fs.writeFile(fileName, file, (err) => err ? console.log(err) : console.log("Success!"));
+  };
 // Function call to initialize app
 init();
 
-
 // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// // THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
+// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
 //![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 
 // WHEN I click on the links in the Table of Contents
