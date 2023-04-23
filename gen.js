@@ -1,4 +1,4 @@
-const fs = require(fs)
+const fs = require("fs")
 const writeToFile = require("./index.js")
 const fileName = "README.md"
 module.exports = generateMarkdown
