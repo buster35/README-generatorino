@@ -4,7 +4,7 @@ const fileName = "README.md"
 module.exports = generateMarkdown
 
 function generateMarkdown(data) {
-  let file = `# ${data.projectTitle}\n## Description\n${data.motivation}\n${data.whyBuild}\n${data.problemsSolved}\n${data.whatWasLearned}\n## Table of Contents:\n### [Instructions](#instructions)\n### [Screenshots](#screenshots)\n### [Contributions](#contributions)\n### [Tests](#tests)\n### [License](#license)\n## Instructions {#instructions}\n${data.instructions}\n## Contributions {#contributions}\n${data.collaborators}\n${data.collaboratorsGithub}\n${data.thirdPartyAssets}\n${data.tutorials}\n## Tests {#tests}\n${data.tests}\n${data.testRun}\n## Questions {#questions}\nPlease direct any further questions to: ${data.userGithub} or ${data.email}\n## License {#license} \n The license used for this project is ${data.license}.\n`
+  let file = `# ${data.projectTitle}\n## Description\n${data.motivation}\n${data.whyBuild}\n${data.problemsSolved}\n${data.whatWasLearned}\n## Table of Contents:\n### [Instructions](#instructions)\n### [Screenshots](#screenshots)\n### [Contributions](#contributions)\n### [Tests](#tests)\n### [License](#license)\n## Instructions{#instructions}\n${data.instructions}\n## Contributions{#contributions}\n${data.collaborators}\n${data.collaboratorsGithub}\n${data.thirdPartyAssets}\n${data.tutorials}\n## Tests{#tests}\n${data.tests}\n${data.testRun}\n## Questions{#questions}\nPlease direct any further questions to: ${data.userGithub} or ${data.email}\n## License{#license} \n The license used for this project is ${data.license}.\n`
 
   writeToFile(fileName, file)
 }

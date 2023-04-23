@@ -2,7 +2,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 module.exports = writeToFile;
-//i'll include the functions contained in generateMarkdown.js here, which will cause them to fire once the app is initialized//
 //this links the generateMarkdown function to index.js; now we can pass in the response parameter, which will log in the generateMarkdown.js file//
 const generateMarkdown = require("./gen.js");
 
@@ -84,7 +83,7 @@ const title = [
     type: "list",
     message: "What license are you using for your project?",
     name: "license",
-    choices: ["MIT", "GNU GPLv3"],
+    choices: ["MIT", "GNU GPLv3", "None"],
   },
   {
     type: "input",
@@ -98,9 +97,8 @@ const title = [
   }
 ];
 
-// TODO: Create a function to write README file; this is to make the actual README.md file(will create a new file) 
 function init() {
-  inquirer.prompt(title).then((response) => { //working
+  inquirer.prompt(title).then((response) => {
     generateMarkdown(response) //goes to generateMarkdown function in generateMarkdown.js//
     });
   }
@@ -115,4 +113,3 @@ init();
 
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
-//*Add <link href="" w/on-page link /link> */
