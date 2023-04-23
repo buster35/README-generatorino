@@ -1,4 +1,3 @@
-
 const inquirer = require("inquirer");
 const fs = require("fs");
 module.exports = writeToFile;
@@ -36,19 +35,16 @@ const title = [
     message: "What instructions are required for the user to use your project?",
     name: "instructions",
   },
-  // {
-  //   type: "confirm",
-  //   message: "Do you want to add a broad-spectrum screenshot for the project?",
-  //   name: "screenshot1",
-  //   when: (answer) => answer.prompt() 
-    
-  // },
-  // {
-  //   type: "confirm",
-  //   message: "Do you have any specific screenshot examples for use of the program?",
-  //   name: "screenshot2",
-  //   when: (answer) =>
-  // },
+  {
+    type: "confirm",
+    message: "Do you want to add a broad-spectrum screenshot for the project?",
+    name: "screenshot1",
+  },
+  {
+    type: "confirm",
+    message: "Do you have any specific screenshot examples for use of the program?",
+    name: "screenshot2",
+  },
   {
     type: "input",
     message: "What collaborators were involved on this project?",
@@ -88,24 +84,43 @@ const title = [
   {
     type: "input",
     message: "Please input your GitHub profile link",
-    name: "userGithub"
+    name: "userGithub",
   },
   {
     type: "input",
-    message: "Please input an email address (if applicable) you'd like to include in your readme",
-    name: "email"
-  }
+    message:
+      "Please input an email address (if applicable) you'd like to include in your readme",
+    name: "email",
+  },
 ];
 
 function init() {
   inquirer.prompt(title).then((response) => {
-    generateMarkdown(response) //goes to generateMarkdown function in generateMarkdown.js//
-    });
-  }
+    if (response.screenshot1 === true) {
+      const bigScreenshot = {
+        type: "input",
+        message: "Please provide an image link for your broad-spectrum screenshot",
+        name: "actualScreenshot",
+      };
+      return inquirer.prompt(bigScreenshot);
+    }
+    if (response.screenshot2 === true) {
+      const smallScreenshot = {
+        type: "input",
+        message: "Please provide an image link for your specific screenshot(s)",
+        name: "moreScreenshots",
+      };
+      return inquirer.prompt(smallScreenshot);
+    }
+    generateMarkdown(response); //goes to generateMarkdown function in generateMarkdown.js//
+  });
+}
 
 function writeToFile(fileName, file) {
-  fs.writeFile(fileName, file, (err) => err ? console.log(err) : console.log("Success!"));
-  };
+  fs.writeFile(fileName, file, (err) =>
+    err ? console.log(err) : console.log("Success!")
+  );
+}
 // Function call to initialize app
 init();
 
