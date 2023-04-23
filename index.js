@@ -111,8 +111,6 @@ function writeToFile(fileName, file) {
 // Function call to initialize app
 init();
 
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
 //![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 
 // WHEN I click on the links in the Table of Contents
