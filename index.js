@@ -3,6 +3,7 @@ const fs = require("fs");
 module.exports = writeToFile;
 //this links the generateMarkdown function to index.js; now we can pass in the response parameter, which will log in the generateMarkdown.js file//
 const generateMarkdown = require("./gen.js");
+const renderLicenseBadge = require("./gen.js");
 
 const title = [
   {
@@ -36,14 +37,9 @@ const title = [
     name: "instructions",
   },
   {
-    type: "confirm",
-    message: "Do you want to add a broad-spectrum screenshot for the project?",
+    type: "input",
+    message: "Please provide a screenshot(s) for this project in markdown form (![Screenshot comment](/path/to/img/file.filename",
     name: "screenshot1",
-  },
-  {
-    type: "confirm",
-    message: "Do you have any specific screenshot examples for use of the program?",
-    name: "screenshot2",
   },
   {
     type: "input",
@@ -96,23 +92,8 @@ const title = [
 
 function init() {
   inquirer.prompt(title).then((response) => {
-    if (response.screenshot1 === true) {
-      const bigScreenshot = {
-        type: "input",
-        message: "Please provide an image link for your broad-spectrum screenshot",
-        name: "actualScreenshot",
-      };
-      return inquirer.prompt(bigScreenshot);
-    }
-    if (response.screenshot2 === true) {
-      const smallScreenshot = {
-        type: "input",
-        message: "Please provide an image link for your specific screenshot(s)",
-        name: "moreScreenshots",
-      };
-      return inquirer.prompt(smallScreenshot);
-    }
-    generateMarkdown(response); //goes to generateMarkdown function in generateMarkdown.js//
+    generateMarkdown(response);
+    renderLicenseBadge(response) //goes to generateMarkdown function in generateMarkdown.js//
   });
 }
 
@@ -123,8 +104,6 @@ function writeToFile(fileName, file) {
 }
 // Function call to initialize app
 init();
-
-//![GitHub](https://img.shields.io/github/license/buster35/README-generatorino) **Badge icon**
 
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
