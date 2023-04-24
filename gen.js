@@ -1,3 +1,8 @@
+// TODO:touch up wording in readme to reflect acceptance criteria
+// TODO:code license badge into readme title so it displays near top
+// TODO:get table of contents to jump to correct sections in readme
+// TODO:make screen castify video
+
 const fs = require("fs")
 const writeToFile = require("./index.js")
 const fileName = "README.md"
@@ -5,6 +10,7 @@ module.exports = generateMarkdown
 
 function generateMarkdown(data) {
   let licenseBadge = data.license
+  let licenseLink = data.license
     switch (licenseBadge) {
       case "MIT":
         licenseBadge = `MIT![GitHub](https://img.shields.io/github/license/${data.userGithub}/README-generatorino)`;
