@@ -1,9 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 module.exports = writeToFile;
-//this links the generateMarkdown function to index.js; now we can pass in the response parameter, which will log in the generateMarkdown.js file//
+//this links the generateMarkdown function to index.js; now we can pass in the response parameter, which will log in the gen.js file//
 const generateMarkdown = require("./gen.js");
-const renderLicenseBadge = require("./gen.js");
 
 const title = [
   {
@@ -38,7 +37,7 @@ const title = [
   },
   {
     type: "input",
-    message: "Please provide a screenshot(s) for this project in markdown form (![Screenshot comment](/path/to/img/file.filename",
+    message: "Please provide a screenshot(s) for this project in markdown form (![Screenshot comment](/path/to/img/file.filename)",
     name: "screenshot1",
   },
   {
@@ -93,7 +92,6 @@ const title = [
 function init() {
   inquirer.prompt(title).then((response) => {
     generateMarkdown(response);
-    renderLicenseBadge(response) //goes to generateMarkdown function in generateMarkdown.js//
   });
 }
 
