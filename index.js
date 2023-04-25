@@ -32,6 +32,11 @@ const title = [
   },
   {
     type: "input",
+    message: "What are the steps for proper installation of this app?",
+    name: "installationInstructions"
+  },
+  {
+    type: "input",
     message: "What instructions are required for the user to use your project?",
     name: "instructions",
   },

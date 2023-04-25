@@ -1,5 +1,3 @@
-// TODO:touch up wording in readme to reflect acceptance criteria
-// TODO:code license badge into readme title so it displays near top
 // TODO:get table of contents to jump to correct sections in readme
 // TODO:make screen castify video
 
@@ -13,21 +11,21 @@ function generateMarkdown(data) {
   let licenseLink = data.license
     switch (licenseBadge) {
       case "MIT":
-        licenseBadge = `![GitHub](https://img.shields.io/github/license/${data.userGithub}/README-generatorino)`;
+        licenseBadge = `![GitHub](https://img.shields.io/github/license/${data.userGithub}/README-generatorino)`
+        licenseLink = "https://choosealicense.com/licenses/mit/#"
         break;
       case "GNU GPLv3": 
-        licenseBadge = `![GitHub](https://img.shields.io/github/license/${data.userGithub}/README-generatorino)`;
+        licenseBadge = `![GitHub](https://img.shields.io/github/license/${data.userGithub}/README-generatorino)`
+        licenseLink = "https://choosealicense.com/licenses/gpl-3.0/"
         break;
-      default: "None";
+      default: "None"
+        licenseBadge = ""
+        licenseLink = ""
         break;
     }
 
-  let file = `# ${data.projectTitle}${licenseBadge}\n## Description\n${data.motivation}\n${data.whyBuild}\n${data.problemsSolved}\n${data.whatWasLearned}\n## Table of Contents:\n### [Instructions](#instructions)\n### [Screenshots](#screenshots)\n### [Contributions](#contributions)\n### [Tests](#tests)\n### [License](#license)\n## Instructions\n${data.instructions}\n## Screenshots\n${data.screenshot1}\n## Contributions\n${data.collaborators}\n${data.collaboratorsGithub}\n${data.thirdPartyAssets}\n${data.tutorials}\n## Tests\n${data.tests}\n${data.testRun}\n## Questions\nPlease direct any further questions to: ${data.userGithub} or ${data.email}\n## License\nThe license used for this project is ${data.license}.\n`
+  let file = `# ${data.projectTitle}${licenseBadge}\n## Description\n${data.motivation}\n${data.whyBuild}\n${data.problemsSolved}\n${data.whatWasLearned}\n## Table of Contents\n### [Installation]\n### [Usage]\n### [Screenshots]\n### [Contributions]\n### [Tests]\n### [Questions]\n### [License]\n## Installation(#installation)${data.installationInstructions}\n## Usage(#usage)\n${data.instructions}\n## Screenshots(#screenshots)\n${data.screenshot1}\n## Contributions(#contributions)\n${data.collaborators}\n${data.collaboratorsGithub}\n${data.thirdPartyAssets}\n${data.tutorials}\n## Tests(#tests)\n${data.tests}\n${data.testRun}\n## Questions(#questions)\nPlease direct any further questions to: ${data.userGithub} or ${data.email}.\n## License(#license)\nThe license used for this project is ${data.license}: ${licenseLink}.\n`
 
   writeToFile(fileName, file)
 }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
