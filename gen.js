@@ -24,7 +24,7 @@ function generateMarkdown(data) {
         break;
     }
 
-  let file = `# ${data.projectTitle}${licenseBadge}\n## Description\n${data.motivation}\n${data.whyBuild}\n${data.problemsSolved}\n${data.whatWasLearned}\n## Table of Contents\n### [Installation]\n### [Usage]\n### [Screenshots]\n### [Contributions]\n### [Tests]\n### [Questions]\n### [License]\n## Installation(#installation)${data.installationInstructions}\n## Usage(#usage)\n${data.instructions}\n## Screenshots(#screenshots)\n${data.screenshot1}\n## Contributions(#contributions)\n${data.collaborators}\n${data.collaboratorsGithub}\n${data.thirdPartyAssets}\n${data.tutorials}\n## Tests(#tests)\n${data.tests}\n${data.testRun}\n## Questions(#questions)\nPlease direct any further questions to: ${data.userGithub} or ${data.email}.\n## License(#license)\nThe license used for this project is ${data.license}: ${licenseLink}.\n`
+  let file = `# ${data.projectTitle}${licenseBadge}\n## Description\n${data.motivation}\n${data.whyBuild}\n${data.problemsSolved}\n${data.whatWasLearned}\n## Table of Contents\n### [Installation](#installation)\n### [Usage](#usage)\n### [Screenshots](#screenshots)\n### [Contributions](#contributions)\n### [Tests](#tests)\n### [Questions](#questions)\n### [License](#license)\n## Installation\n${data.installationInstructions}\n## Usage\n${data.instructions}\n## Screenshots\n${data.screenshot1}\n## Contributions\n${data.collaborators}\n${data.collaboratorsGithub}\n${data.thirdPartyAssets}\n${data.tutorials}\n## Tests\n${data.tests}\n${data.testRun}\n## Questions\nPlease direct any further questions to: ${data.userGithub} or ${data.email}.\n## License\nThe license used for this project is ${data.license}: ${licenseLink}.\n`
 
   writeToFile(fileName, file)
 }
