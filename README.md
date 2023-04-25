@@ -18,7 +18,7 @@ To use the readme generator app the user must be in the Node.js runtime environm
 ## Usage
 The user may execute the program by typing “index.js” in the terminal. The terminal must be pointing to the index.js file in the app. From here the stream of question prompts will begin. The user will answer these within the command line. Answers to the prompts may be as long or as short as the user wants, but please pay close attention to any specific text formats that must be included for use with Markdown syntax. If the user chooses they may skip over a question by simply pressing enter to pass through the question once prompted.”\n”Once Inquirer finishes prompting the user a “README.md” file will be generated in the user’s directory and may be viewed as a raw Markdown file, or with the “Open Preview” (Ctrl + Shift + V) option when the README.md tab is right-clicked on while open in VSCode.
 ## Screenshots
-![npm Inquirer Demo](./node-inquirer-demo.png)![Generated README.md](./generated-readme.png)
+![Runthrough]("./runthroughvideo.webm")![npm Inquirer Demo](./node-inquirer-demo.png)![Generated README.md](./generated-readme.png)
 ## Contributions
 This was an individual project with no outside collaboration. If multiple collaborators are involved they will have their names and/or GitHub url listed here.
 
