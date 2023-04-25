@@ -83,8 +83,13 @@ const title = [
   },
   {
     type: "input",
-    message: "Please input your GitHub profile link",
+    message: "Please input your GitHub profile",
     name: "userGithub",
+  },
+  {
+    type: "input",
+    message: "Please input your desired destination GitHub repository name",
+    name: "userRepo"
   },
   {
     type: "input",
@@ -107,6 +112,3 @@ function writeToFile(fileName, file) {
 }
 // Function call to initialize app
 init();
-
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README

@@ -1,8 +1,9 @@
-# Professional README Generator![GitHub](https://img.shields.io/github/license/buster35/README-generatorino)
+# Professional README Generator
+![GitHub](https://img.shields.io/github/license/buster35/README-generatorino)
 ## Description
 This README file was created from the command line. The motivation behind this project was to create an app via Node.js that will create a readme file after being fed user prompts. This will allow the user to ultimately save time writing the readme which will result in more time to work on the fun stuff!
 I built this project in order to further my knowledge of Node.js and the power of the available package libraries that are available to programmers. In this case, the main package library used was Inquirer: https://www.npmjs.com/package/inquirer#installation.
-I built this project in order to further my knowledge of Node.js and the power of the available package libraries that are available to programmers. In this case, the main package library used was Inquirer: https://www.npmjs.com/package/inquirer#installation.
+As stated earlier, this app saves time when it comes to writing - let’s be honest - sometimes tedious readme files by generating the bulk of the readme file for the user.
 I learned more about the Node.js runtime environment while working on this project, and I look forward to exploring it more in the future and implementing it on future projects.
 ## Table of Contents
 ### [Installation](#installation)
